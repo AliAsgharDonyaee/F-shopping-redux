@@ -12,7 +12,7 @@ const NSBox = ({ title, dataTitle, Icon }) => {
 					style={{
 						width: "18px",
 						height: "18px",
-						backgroundColor: "red",
+						backgroundColor: "rgb(219 39 119)",
 						position: "relative",
 						bottom: "10px",
 						right: "5px",
