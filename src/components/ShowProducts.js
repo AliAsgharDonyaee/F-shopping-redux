@@ -1,6 +1,6 @@
 import React from "react";
 
-const SpecialProductsBox = () => {
+const ShowProducts = () => {
 	return (
 		<>
 			<div className='w-full h-[20%] flex justify-between items-center text-slate-800'>
@@ -33,4 +33,4 @@ const SpecialProductsBox = () => {
 	);
 };
 
-export default SpecialProductsBox;
+export default ShowProducts;

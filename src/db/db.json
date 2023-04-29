@@ -1,0 +1,30 @@
+{
+    "category":[
+        {"name":"T-Shirt"},
+        {"name": "Shoes"}
+    ],
+    "products":[
+        {
+            "id": 1,
+            "name": "T-Shirt",
+            "category":"T-Shirt",
+            "description":"lorem ...",
+            "prise":299,
+            "score":4.9,
+            "total_score":2996,
+            "img": ""
+        }
+    ],
+    "best_products":[
+        {
+            "id": 1,
+            "name": "T-Shirt",
+            "category":"T-Shirt",
+            "description":"lorem ...",
+            "prise":299,
+            "score":4.9,
+            "total_score":2996,
+            "img": ""
+        }
+    ]
+}

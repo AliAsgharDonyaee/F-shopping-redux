@@ -1,5 +1,9 @@
 import React from "react";
 import Logo from "../assets/logo/svg/logo-light.svg";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import YouTubeIcon from "@mui/icons-material/YouTube";
 
 const Footer = () => {
 	return (
@@ -54,17 +58,25 @@ const Footer = () => {
 					</a>
 					<p>lorem info site</p>
 					<div className='mt-2 w-full h-16 flex'>
-						<div className='w-10 h-10 rounded-full border-2 border-gray-500 border-solid grid place-content-center'>
-							<a href='#'>Fa</a>
+						<div className='w-10 h-10 rounded-xl border-solid grid place-content-center'>
+							<a href='#'>
+								<FacebookIcon />
+							</a>
 						</div>
-						<div className='ml-2 w-10 h-10 rounded-full border-2 border-gray-500 border-solid grid place-content-center'>
-							<a href='#'>Fa</a>
+						<div className='ml-2 w-10 h-10 rounded-xl border-solid grid place-content-center'>
+							<a href='#'>
+								<InstagramIcon />
+							</a>
 						</div>
-						<div className='ml-2 w-10 h-10 rounded-full border-2 border-gray-500 border-solid grid place-content-center'>
-							<a href='#'>Fa</a>
+						<div className='ml-2 w-10 h-10 rounded-xl border-solid grid place-content-center'>
+							<a href='#'>
+								<TwitterIcon />
+							</a>
 						</div>
-						<div className='ml-2 w-10 h-10 rounded-full border-2 border-gray-500 border-solid grid place-content-center'>
-							<a href='#'>Fa</a>
+						<div className='ml-2 w-10 h-10 rounded-xl border-solid grid place-content-center'>
+							<a href='#'>
+								<YouTubeIcon />
+							</a>
 						</div>
 					</div>
 				</div>
