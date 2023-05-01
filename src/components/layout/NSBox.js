@@ -2,13 +2,13 @@ import React from "react";
 import IconButton from "@mui/material/IconButton";
 import { Badge } from "@mui/base";
 
-const NSBox = ({ title, dataTitle, Icon }) => {
+const NSBox = ({ title, count = 0, Icon }) => {
 	return (
 		<>
-			<IconButton size='medium' aria-label={`${dataTitle} ${title}`} color='inherit'>
+			<IconButton size='medium' aria-label={`${count} ${title}`} color='inherit'>
 				<Icon />
 				<Badge
-					badgeContent={0}
+					badgeContent={`${count}`}
 					style={{
 						width: "18px",
 						height: "18px",

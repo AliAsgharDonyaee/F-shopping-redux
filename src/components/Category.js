@@ -15,9 +15,10 @@ const Category = () => {
 	]);
 	return (
 		<>
-			{data.map(({ link, title, color_1, color_2 }) => {
+			{data.map(({ link, title, color_1, color_2 }, index) => {
 				return (
 					<a
+						key={index}
 						href={link}
 						className={`rounded-lg w-full h-10 xl:h-16 bg-gradient-to-br ${color_1} ${color_2} grid place-content-center font-bold text-sm xl:text-lg text-white`}
 					>

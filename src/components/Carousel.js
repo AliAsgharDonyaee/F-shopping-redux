@@ -25,8 +25,8 @@ const Carousell = () => {
 
 	return (
 		<Carousel indicators={false} slide={false} navButtonsAlwaysVisible>
-			{items.map((item, i) => (
-				<Item key={i} item={item} />
+			{items.map((item, index) => (
+				<Item key={index} item={item} />
 			))}
 		</Carousel>
 	);

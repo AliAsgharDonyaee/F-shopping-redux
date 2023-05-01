@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import Logo from "../assets/logo/svg/logo-light.svg";
 import LocalGroceryStoreIcon from "@mui/icons-material/LocalGroceryStore";
 import NotificationsIcon from "@mui/icons-material/Notifications";
@@ -7,17 +7,38 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import SearchBox from "./SearchBox";
 import ProfileBox from "./ProfileBox";
 import NSBox from "./NSBox";
+import { http } from "../service/http";
+import { ToastContainer, toast } from "react-toastify";
 
 const Header = () => {
-	const [links, setLinks] = React.useState([
+	const [links, setLinks] = useState([
 		{ name: "Promo", link: "#" },
 		{ name: "Codawin News", link: "#" },
 		{ name: "Help & Center", link: "#" },
 		{ name: "Language", link: "#" },
 	]);
+	const [lenCart, setLenCart] = useState();
+
+	useEffect(() => {
+		http.get()
+			.then((res) => setLenCart(res.data))
+			.catch((err) => {
+				toast.error(err.message, {
+					position: "top-right",
+					autoClose: 5000,
+					hideProgressBar: false,
+					closeOnClick: true,
+					pauseOnHover: true,
+					draggable: true,
+					progress: undefined,
+					theme: "colored",
+				});
+			});
+	}, [lenCart]);
 
 	return (
 		<header className='w-full h-20 md:h-32 bg-slate-800'>
+			<ToastContainer />
 			<nav className='hidden md:flex w-full h-[30%] bg-slate-700'>
 				<nav className='xl:mx-auto lg:ml-2 lg:mr-4 w-full xl:w-[1280px] 2xl:w-[1440px] h-full flex justify-between items-center'>
 					<div className='w-1/2 2xl:w-1/3 h-full flex items-center'>
@@ -28,9 +49,9 @@ const Header = () => {
 					</div>
 					<div className='w-1/2 lg:w-2/5 2xl:w-1/3 h-full'>
 						<ul className='w-full h-full flex justify-around lg:justify-between items-center'>
-							{links.map((e) => {
+							{links.map((e, index) => {
 								return (
-									<li>
+									<li key={index}>
 										<a href={e.link} className='text-sm text-gray-400 transition hover:text-white '>
 											{e.name}
 										</a>
@@ -54,18 +75,16 @@ const Header = () => {
 							<LocationOnIcon />
 							<p className='text-gray-400'>Iran, West Azerbaijan</p>
 						</div>
-						{/* problem */}
 						<div className='w-4/5 h-full flex justify-center items-center'>
 							<SearchBox />
 						</div>
-						{/* problem */}
 					</div>
 					<div className='w-1/2 md:w-1/5 2xl:w-[15%] h-1/2 grid grid-cols-10 grid-rows-1 justify-items-end text-gray-100'>
 						<div className='w-8 h-8  col-span-3 grid place-content-center'>
-							<NSBox title='new shop' dataTitle='0' Icon={LocalGroceryStoreIcon} />
+							<NSBox title='new shop' count={lenCart?.length} Icon={LocalGroceryStoreIcon} />
 						</div>
 						<div className='w-8 h-8  col-span-3 grid place-content-center'>
-							<NSBox title='new notifications' dataTitle='0' Icon={NotificationsIcon} />
+							<NSBox title='new notifications' count='0' Icon={NotificationsIcon} />
 						</div>
 						<div className=' w-[2px] h-[90%] col-span-1 bg-gray-400'></div>
 						<div className='w-8 h-8  col-span-3 grid place-content-center'>
