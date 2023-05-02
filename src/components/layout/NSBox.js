@@ -5,7 +5,7 @@ import { Badge } from "@mui/base";
 const NSBox = ({ title, count = 0, Icon }) => {
 	return (
 		<>
-			<IconButton size='medium' aria-label={`${count} ${title}`} color='inherit'>
+			<IconButton  size='medium' aria-label={`${count} ${title}`} color='inherit'>
 				<Icon />
 				<Badge
 					badgeContent={`${count}`}

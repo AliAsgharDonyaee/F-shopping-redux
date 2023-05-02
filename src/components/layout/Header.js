@@ -20,7 +20,7 @@ const Header = () => {
 	const [lenCart, setLenCart] = useState();
 
 	useEffect(() => {
-		http.get()
+		http.get("/products")
 			.then((res) => setLenCart(res.data))
 			.catch((err) => {
 				toast.error(err.message, {

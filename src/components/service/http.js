@@ -1,6 +1,6 @@
 import axios from "axios";
 
-axios.defaults.baseURL = "http://localhost:3000/products"
+axios.defaults.baseURL = "http://localhost:3500";
 
 export const http = {
 	get: axios.get,
